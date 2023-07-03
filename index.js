@@ -30,7 +30,13 @@ const ExtractJwt = require("passport-jwt").ExtractJwt;
 const path = require("path");
 const { Order } = require("./model/Order");
 
+
 // console.log(process.env);
+
+
+
+
+
 
 //WebHook
 // --- its like a api declared publically and any server can access it
@@ -110,6 +116,9 @@ app.use("/users", isAuth(), usersRouter.router);
 app.use("/auth", authRouter.router);
 app.use("/cart", isAuth(), cartRouter.router);
 app.use("/orders", isAuth(), orderRouter.router);
+
+
+
 // this line we add to make react router work in case of other routes doesnt match
 app.get("*", (req, res) => res.sendFile(path.resolve("build", "index.html")));
 
