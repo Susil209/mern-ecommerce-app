@@ -43,6 +43,7 @@ const { Order } = require("./model/Order");
 
 // This is your Stripe CLI webhook secret for testing your endpoint locally.
 const endpointSecret = process.env.ENDPOINT_SECRET;
+// const endpointSecret = "whsec_dc9d205814be2766dcbd5fe60fbf86e210f901388a82cc2ae75320e39955eedf"
 
 app.post(
   "/webhook",
