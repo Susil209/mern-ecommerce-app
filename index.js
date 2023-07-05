@@ -64,13 +64,13 @@ app.post(
     switch (event.type) {
       case "payment_intent.succeeded":
         const paymentIntentSucceeded = event.data.object;
-        console.log({paymentIntentSucceeded});
+        // console.log({paymentIntentSucceeded});
         // Then define and call a function to handle the event payment_intent.succeeded
-        // const order = await Order.findById(
-        //   paymentIntentSucceeded.metadata.orderId
-        // );
-        // order.paymentStatus = "received";
-        // await order.save();
+        const order = await Order.findById(
+          paymentIntentSucceeded.metadata.orderId
+        );
+        order.paymentStatus = "received";
+        await order.save();
 
         break;
       // ... handle other event types
