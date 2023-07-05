@@ -84,7 +84,7 @@ exports.resetPasswordRequest = async (req, res) => {
     await user.save();
     // Also set token in email
     const resetPageLink =
-      'https://mern-ecommerce-app-smoky.vercel.app/reset-password?token=' + token + '&email=' + email;
+      'https://mern-ecommerce-app-three.vercel.app/reset-password?token=' + token + '&email=' + email;
     const subject = "reset password for e-commerce";
     const html = `<p>Click <a href='${resetPageLink}'>here</a> to Reset Password</p>`;
     if (email) {
@@ -116,7 +116,7 @@ exports.resetPassword = async (req, res) => {
         user.salt = salt;
         await user.save();
 
-        const loginPage = 'https://mern-ecommerce-app-smoky.vercel.app/login';
+        const loginPage = 'https://mern-ecommerce-app-three.vercel.app/login';
         const subject = 'Password successfully reset for e-commerce';
         const html = `<p>Your password is reset successfully.To go back to login page click <a href='${loginPage}'>here</a>.</p>`;
         if (email) {
